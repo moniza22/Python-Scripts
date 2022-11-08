@@ -1,0 +1,55 @@
+Strings can be thought of as sequences of characters. Almost everything we've seen that we can do to a list, we can also do to a string.
+fruit='Apple'
+fruit[0]         # indexing
+fruit[-3:]       # slicing
+len(fruit)       # length function on string
+[x+'!' for x in fruit]     # list comprehension and for loop with string
+But a major way in which they differ from lists is that they are immutable. We can't modify them.
+fruit.upper()
+fruit.lower()
+fruit.index()
+fruit.startswith()
+fruit.endswith()
+task="To write the syntax"
+list_task= task.split().   # to break the string in the form of list, with ' ' used as separation point
+date="2022-05-30"
+year, month, day= date.split('-')
+'/'.join([year, month, day]) # to join the list with '/' between its elements
+' '.join(list_task)          # to join the list with ' ' between its elements
+concatenation is done in string through + sign
+you can concatenate an integer using str() fn
+number=20
+new_task=task+str(number)
+we can use .format() method instead of str()
+new_task= "To write the syntax {}".format(number)
+number.1=15
+# Referring to format() arguments by index, starting from 0
+new_task= "To write the syntax {0},then repeat task {1}, then do again {0}".format(number, number.1)
+
+Dictionaries
+Dictionaries are a built-in Python data structure for mapping keys to values.
+fruits= {'one':'Apple', 'two':'Banana, 'three':'Pear'}
+fruits['one']              # access the value through key
+fruits['four']='Grape'     #increment dictionary key:value pair
+fruits['two']='Peach       #change the value associated with an existing key
+Dictionaries comprehension
+planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune']
+planet_to_initial = {planet: planet[0] for planet in planets}
+planet_to_initial
+{'Mercury': 'M',
+ 'Venus': 'V',
+ 'Earth': 'E',
+ 'Mars': 'M',
+ 'Jupiter': 'J',
+ 'Saturn': 'S',
+ 'Uranus': 'U',
+ 'Neptune': 'N'}
+ A for loop will loop over the keys in dictionary
+ for k in fruits:
+    print("{} = {}".format(k, fruits[k]))
+ We can access a collection of all the keys or all the values with dict.keys() and dict.values(), respectively.
+ ' '.join(fruits.values())
+ ' '.join(fruits.keys())
+ The very useful dict.items() method lets us iterate over the keys and values of a dictionary simultaneously(an item refers to a key, value pair)
+ for key, value in fruits.item():
+      print(f"Number {key} is {value}")
