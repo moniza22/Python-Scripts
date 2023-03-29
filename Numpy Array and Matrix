@@ -1,0 +1,119 @@
+# To get the numbers in numpy matrix format
+
+m=1, 2, 3,4, 5, 6,9, 8, 9 
+n=list(m)
+length=len(n)
+i=0
+while i<100:
+    i+=1
+    if i*i==length:
+        index=i
+np.array(list(m)).reshape(index,index)    
+
+# To get the diagonal difference of a matrix through numpy
+def diagonalDifference(matrix):
+    
+    import math
+    import numpy as np
+    arr=np.array(matrix)
+    i,j=arr.shape
+
+    num1=0
+    t=0
+    while t < j :
+        num1+=arr[t,t]
+        t+=1
+    num2=0
+    t=0
+    while t<i:
+        num2+=arr[t,j-1]
+        t+=1
+        j-=1
+    result=abs(num1-num2)
+    return result
+diagonalDifference([[1, 2, 3],
+[4, 5, 6],
+[9, 8, 9]])   
+
+#To get the list of lonely(that are present only once) integers from a given list
+
+def lonelyintegers(a):
+    import math
+    import numpy as np
+    array=np.array(a)
+    new=np.unique(array)
+    l=[]
+    for element in new:
+        count=0
+        for value in array:
+            if value == element:
+                count+=1
+    
+        if count ==1:
+            l.append(element)
+    return l    
+    
+    # To get one lonely integer from a list
+
+import math
+import numpy as np
+b=np.array([1,2,3,4,3,2,1])
+new=np.unique(b)
+for element in new:
+    count=0
+    for value in b:
+        if value == element:
+            count+=1
+    
+    if count ==1:
+        print(element)
+        
+  # To get the median from odd length list of integers
+
+import math
+arr=[1,2,4,-3,5]
+arr.sort()
+number=len(arr)/2
+number
+index=math.floor(number)
+output=arr[index]
+output
+
+# To print the minimum sum and maximum sum of a list of integers
+
+def miniMaxSum(arr):
+    arr.sort()
+    minsum=0
+    maxsum=0
+    length=len(arr)
+    i=0
+    while i< length:
+        minsum=minsum+arr[i]
+    
+        maxsum+=arr[i+1]
+        i=i+1
+    result=print(int(minsum),int(maxsum))
+    return result
+    
+    
+ # To get positive nos. , negative nos. and zeros ratio from a list of integers
+
+def plusMinus(arr):
+    length=len(arr)
+    pos=0
+    neg=0
+    zero=0
+    for a in arr:
+        if a >0:
+            pos+=1
+        elif a<0:
+            neg+=1
+        else:
+            zero+=1
+    pos_ratio=pos/length
+    neg_ratio=neg/length 
+    zero_ratio=zero/length
+    print("%.6f" %pos_ratio)
+    print("%.6f" %neg_ratio)
+    print("%.6f" %zero_ratio)
+    
